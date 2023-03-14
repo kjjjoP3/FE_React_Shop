@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
 import ListManufacturers from '~/components/manufacturers/ListManufacturers';
 import UploadImage from '~/components/products/UploadImage';
+import AddOrEditProduct from '~/components/products/AddOrEditProduct';
 
 const { Header, Sider, Content } = Layout;
 
@@ -124,11 +125,13 @@ function DashboardPage() {
                                     key: '31',
                                     icon: <MdAddCircleOutline />,
                                     label: 'Add Product',
+                                    onClick: () => navigate('/products/add'),
                                 },
                                 {
                                     key: '32',
                                     icon: <MdFormatListBulleted />,
                                     label: 'List Products',
+                                    onClick: () => navigate('/products/list'),
                                 },
                                 {
                                     key: '33',
@@ -217,6 +220,7 @@ function DashboardPage() {
                             <Route path="/categories/list" element={<ListCategory />}></Route>
                             <Route path="/manufacturers/list" element={<ListManufacturers />}></Route>
                             <Route path="/products/upload" element={<UploadImage />}></Route>
+                            <Route path="/products/add" element={<AddOrEditProduct />}></Route>
                         </Routes>
 
                         <Outlet></Outlet>
